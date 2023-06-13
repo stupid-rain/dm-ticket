@@ -1,0 +1,30 @@
+accounts:
+    # .damai.cn中的cookie完整字符串
+    - cookie: "cna=khX/HKBJOlcCAYzjfill9AQe; xlly_s=1; t=b7e424bf2a8467b133a79cb116367eb8; damai.cn_nickName=%E9%BA%A6%E5%AD%90; destCity=%u6B66%u6C49; _m_h5_tk=db60a144c6559bca31bf41cae34487d8_1685681730244; _m_h5_tk_enc=a6fb89f91d115bd8e54705a84ebfd51b; _samesite_flag_=true; cookie2=1c8198b06f534a0166f7727d1542c195; _tb_token_=fb03e1d313e49; _hvn_login=18; munb=3727863961; csg=1389b5a7; l=fBS4xc8mNwaL0JZTBO5Znurza77OgIRfCsPzaNbMiIEGa6tNtF96mNC_5DSWSdtjgTCj8hxrip0J_dUvJM4KNxDDBeAHjt4KnxvO0MP9K; tfstk=cP6cBn65wsRjpgeOPZ9bhi2L3qPdZiMw-OW5UlbZgOOp716PiRlrTuLYqE4Quf1..; usercode=62123266; dm_nickname=%E9%BA%A6%E5%AD%90; havanaId=3727863961; isg=BICAfvs_8Drh4Yw_jZICUVJZUQ5SCWTTeDGbfvoRwxsudSKfoxv3YNYDjd21RRyr"
+      remark: 账号1
+      # 抢票轮训间隔, 单位毫秒
+      interval: 30
+
+      # 最早提前多少毫秒发包。 开抢剩余时间戳 = 开始售票的时间戳 - 当前时间戳。 当开抢剩余时间戳时间小于 submit_time时, 开始发送数据包。
+      earliest_submit_time: 5
+
+      # 请求时间 时间戳毫秒 用于捡漏 . 例如 50分是开票时间 但没有抢到,那么这里可以设置55分再抢一次,可能抢到二次放出的票
+      # 1685415600100
+      request_time: -1
+
+      # 重试次数 
+      retry_times: 2
+
+      # 重试间隔 单位毫秒
+      retry_interval: 100
+
+      ticket:
+        # 需要抢购的门票ID, 门票详情页URL中的itemId.如:https://m.damai.cn/damai/detail/item.html?utm=&itemId=710947802955
+        id: "721216860314"
+        # 需要抢购的门票数量
+        num: 2
+        # 需要抢购的场次序号.
+        sessions: 2
+        # 需要抢购的票档序号
+        grade: 3
+
